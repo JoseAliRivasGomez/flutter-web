@@ -1,0 +1,544 @@
+{
+	"info": {
+		"_postman_id": "da3fc736-77eb-44f9-adee-e22d936a17ae",
+		"name": "Cafe-Dev",
+		"description": "Colección de los servicios REST creados en nuestro backend server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Test 16\",\n    \"correo\": \"test16@test.com\",\n    \"password\": \"123456\",\n    \"rol\": \"USER_ROLE\",\n    \"img\": \"sjkdhasjdf\",\n    \"_id\": 123\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/usuarios",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Test 1\",\n    \"correo\": \"test1@test.com\",\n    \"rol\": \"ADMIN_ROLE\",\n    \"img\": \"sjkdhasjdf\",\n    \"otroCampo\": \"asdjkhaks\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/usuarios/601d970274d12f1a23c7d249",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"usuarios",
+						"601d970274d12f1a23c7d249"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener usuarios paginados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/usuarios?limite=10&desde=0",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "limite",
+							"value": "10"
+						},
+						{
+							"key": "desde",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Test 1\",\n    \"correo\": \"test1@test.com\",\n    \"rol\": \"ADMIN_ROLE\",\n    \"img\": \"sjkdhasjdf\",\n    \"otroCampo\": \"asdjkhaks\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/usuarios/601d970274d12f1a23c7d249",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"usuarios",
+						"601d970274d12f1a23c7d249"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"correo\": \"test1@test.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/auth/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Google Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_token\": \"abc123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/auth/google",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"google"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Categorias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/categorias",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Categoria",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDFkZTNmYzE1YjQxNTI3NjBmYmFiOGYiLCJpYXQiOjE2MTI3MTEzNTUsImV4cCI6MTYxMjcyNTc1NX0.a5moqYv8_XLmjImCEVPYCc-FbZbBkSuQGfOEkQnxLpk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\":\"Galleta\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/categorias",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Categoria",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDFkZTNmYzE1YjQxNTI3NjBmYmFiOGYiLCJpYXQiOjE2MTI3MTU1NjgsImV4cCI6MTYxMjcyOTk2OH0.7ADeAX51xfQ4kUXy9LkD3ctXt993yKPYx1jUScLCe0M",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Galleta\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/categorias/60200af3f89546088e233180",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"categorias",
+						"60200af3f89546088e233180"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Categoria",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDFkZTNmYzE1YjQxNTI3NjBmYmFiOGYiLCJpYXQiOjE2MTI3MTEzNTUsImV4cCI6MTYxMjcyNTc1NX0.a5moqYv8_XLmjImCEVPYCc-FbZbBkSuQGfOEkQnxLpk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/categorias/602005c9f1df4d070ba11499",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"categorias",
+						"602005c9f1df4d070ba11499"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/productos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Producto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/categorias/60200af3f89546088e233180",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"categorias",
+						"60200af3f89546088e233180"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Producto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDFkZTNmYzE1YjQxNTI3NjBmYmFiOGYiLCJpYXQiOjE2MTI3MTEzNTUsImV4cCI6MTYxMjcyNTc1NX0.a5moqYv8_XLmjImCEVPYCc-FbZbBkSuQGfOEkQnxLpk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Animalitos\",\n    \"categoria\": \"60200af3f89546088e233180\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/productos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Producto",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDFkZTNmYzE1YjQxNTI3NjBmYmFiOGYiLCJpYXQiOjE2MTI3MTEzNTUsImV4cCI6MTYxMjcyNTc1NX0.a5moqYv8_XLmjImCEVPYCc-FbZbBkSuQGfOEkQnxLpk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"precio\": 1.55\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/productos/6020121330d73a0ad252895e",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"productos",
+						"6020121330d73a0ad252895e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Producto",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDFkZTNmYzE1YjQxNTI3NjBmYmFiOGYiLCJpYXQiOjE2MTI3MTEzNTUsImV4cCI6MTYxMjcyNTc1NX0.a5moqYv8_XLmjImCEVPYCc-FbZbBkSuQGfOEkQnxLpk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/productos/6020121330d73a0ad252895e",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"productos",
+						"6020121330d73a0ad252895e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busquedas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/buscar/productos/60201f5e1df47c0e8d810dbf",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"buscar",
+						"productos",
+						"60201f5e1df47c0e8d810dbf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subir archivo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivo",
+							"type": "file",
+							"src": "/Users/strider/Pictures/Heros/green.jpg"
+						},
+						{
+							"key": "archivo2",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/upload",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar imagen",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivo",
+							"type": "file",
+							"src": "/Users/strider/Pictures/productos/oreo.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/upload/productos/60204f546d0c36181d12804d",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"upload",
+						"productos",
+						"60204f546d0c36181d12804d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener imagen en Path",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/upload/usuarios/601de40315b4152760fbab92",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"upload",
+						"usuarios",
+						"601de40315b4152760fbab92"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Renovar Token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDFkZTNmYzE1YjQxNTI3NjBmYmFiOGYiLCJpYXQiOjE2MTMwNzY0NDcsImV4cCI6MTYxMzA5MDg0N30.4MzT8yl5Gu2PakcRro-t-oGlE_pbtYVT3CckW5yyiTs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/auth",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
